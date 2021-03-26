@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --main-background-color: #2d6ed6;
+
+  --button-color: rgb(23, 187, 23);
+  --button-hover-color: rgb(25, 156, 25);
+}
+
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+body {
+  background-color: var(--main-background-color);
+
+  min-height: 75vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 20px 0px 0px;
+
+}
+
+#container {
+  background-color: white;
+
+  width: 85%;
+  height: 550px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+section.titleContainer {
+  width: 100%;
+  height: 200px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+
+}
+
+.titleImg {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position:50% 50%;
+
+}
+
+.title {
+  background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
+
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: white;
+  font-size: 2.2em;
+  letter-spacing: 0.03em;
+
+}
+
+#formContainer {
+  width: 100%;
+  height: 90%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+#formContainer input {
+  width: 80%;
+  height: 40px;
+
+  font-size: 4vmin;
+  
+  padding: 5px 8px;
+
+  border: none;
+  border-bottom: 1px solid gray;
+
+  outline: none;
+
+  transition: all 0.3s;
+
+}
+
+#formContainer input:focus {
+  background-color: #efefefef;
+
+}
+
+#formContainer button {
+  background-color: var(--button-color);
+
+  width: 80%;
+  height: 40px;
+
+  color: white;
+  font-size: 1.4em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+
+  border: none;
+  border-radius: 4px;
+  outline: none;
+
+  cursor: pointer;
+
+  transition: background 0.3s;
+
+}
+
+#formContainer button:disabled {
+  opacity: 50%;
+
+  cursor: not-allowed;
+
+}
+
+#formContainer button:hover {
+  background-color: var(--button-hover-color);
+
+}
+
+input.valid,
+input.invalid {
+  font-weight: 500;
+
+}
+
+input.valid {
+  border-bottom: green;
+  color: green;
+
+}
+
+input.invalid {
+  border-bottom: red;
+  color: red;
+
+}

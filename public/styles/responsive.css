@@ -1,0 +1,34 @@
+@media screen and (min-width: 500px) {
+  body {
+    min-height: 100vh;
+
+    padding: none;
+
+  }
+
+  #container {
+    max-width: 700px;
+    height: 600px;
+    
+  }
+  .title {
+    font-size: 2.5em;
+
+  }
+
+  #formContainer {
+    height: 100%;
+
+  }
+
+  #formContainer input {
+    font-size: 1.2em;
+
+  }
+
+  #formContainer button {
+    height: 50px;
+    margin-top: 10px;
+
+  }
+}
