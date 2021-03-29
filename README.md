@@ -1,2 +1,4 @@
 # validation-with-regex
-This is a validation of User inputs as Username, Password and Email (only @gmail.com) with regEX.
+In this project I studying string validation with RegEx.
+
+This validate User inputs as Username, Password, and Email (only @gmail.com)
