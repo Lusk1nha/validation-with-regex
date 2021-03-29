@@ -1,0 +1,52 @@
+@media screen and (min-width: 500px) {
+  body {
+    min-height: 100vh;
+
+    padding: none;
+
+  }
+
+  #container {
+    max-width: 700px;
+    height: 600px;
+    
+  }
+  .title {
+    font-size: 2.5em;
+
+  }
+
+  #formContainer {
+    height: 100%;
+
+  }
+
+  #formContainer input {
+    font-size: 1.2em;
+
+  }
+
+  .infoButton.opened ~ .infoContainer {
+    padding: 20px 90px;
+
+  }
+
+  .infoButton.opened ~ .infoContainer img {
+    width: 50px;
+    height: 50px;
+
+    margin: 20px 0px;
+
+  }
+
+  .infoButton.opened ~ .infoContainer .textContainer {
+    font-size: 0.85em;
+
+  }
+
+  #formContainer button {
+    height: 50px;
+    margin-top: 10px;
+
+  }
+}

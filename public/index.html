@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Validation</title>
+
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
+  <link rel="shortcut icon" href="./assets/check-icon.svg">
+</head>
+<body>
+  <div id="container">
+    <section class="titleContainer">
+      <img class="titleImg" src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1113&q=80" alt="Imagem de uma cidade">
+      <h1 class="title">Cadastrar</h1>
+
+    </section>
+
+    <form id="formContainer">
+      <div class="infoButton">
+        <div class="image-info"></div>
+      </div>
+
+      <span class="infoContainer">
+        <div class="textContainer">
+          <p>
+            O Nome de Usuário deve ter,
+            no mínimo 4 caracteres e 15 ao máximo,
+            não deve conter espaços ou caracteres especiais.
+          </p>
+
+          <p>
+            A senha deve ter pelo menos 5 caracteres normais como (A-B-C),
+            também deve ter 6 caracteres especiais como Números (1-2-3) ou (!@#$&)
+            E 2 Hifens (-).
+
+          </p>
+
+          <p>
+            O email deve ser somente @gmail
+          </p>
+
+        </div>
+      </span>
+      
+      <div class="inputContainer">
+        <input type="text" class="user username" placeholder="Nome do Usuário">
+      </div>
+
+      <div class="inputContainer">
+        <input type="text" class="user password" placeholder="Senha">
+      </div>
+
+      <div class="inputContainer">
+        <input type="text" class="user confirmpassword" placeholder="Confirme a senha">
+      </div>
+
+      <div class="inputContainer">
+        <input type="email" class="user email" placeholder="Email - @gmail">
+      </div>
+      
+      <button type="button" class="requestRegister" disabled>Enviar</button>
+    </form>
+  </div>
+  
+  <script src="./index.js"></script>
+</body>
+</html>
