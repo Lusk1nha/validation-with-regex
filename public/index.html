@@ -18,46 +18,21 @@
     </section>
 
     <form id="formContainer">
-      <div class="infoButton">
-        <div class="image-info"></div>
-      </div>
-
-      <span class="infoContainer">
-        <div class="textContainer">
-          <p>
-            O Nome de Usuário deve ter,
-            no mínimo 4 caracteres e 15 ao máximo,
-            não deve conter espaços ou caracteres especiais.
-          </p>
-
-          <p>
-            A senha deve ter pelo menos 5 caracteres normais como (A-B-C),
-            também deve ter 6 caracteres especiais como Números (1-2-3) ou (!@#$&)
-            E 2 Hifens (-).
-
-          </p>
-
-          <p>
-            O email deve ser somente @gmail
-          </p>
-
-        </div>
-      </span>
-      
       <div class="inputContainer">
         <input type="text" class="user username" placeholder="Nome do Usuário">
+        <p class="error text" hidden>4 letras e 15 ao máximo, não deve conter espaços, números ou caracteres especiais.</p>
       </div>
 
       <div class="inputContainer">
-        <input type="text" class="user password" placeholder="Senha">
-      </div>
-
-      <div class="inputContainer">
-        <input type="text" class="user confirmpassword" placeholder="Confirme a senha">
+        <input type="password" class="user password" placeholder="Senha">
+        <p class="error password" hidden>Precisa de 5 letras, 6 caracteres especiais e 2 Hifens (-) em qualquer ordem.</p>
+      
       </div>
 
       <div class="inputContainer">
         <input type="email" class="user email" placeholder="Email - @gmail">
+        <p class="error email" hidden>O email deve ser somente @gmail</p>
+      
       </div>
       
       <button type="button" class="requestRegister" disabled>Enviar</button>

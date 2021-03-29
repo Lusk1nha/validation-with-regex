@@ -1,118 +1,58 @@
 const inputsUser = document.querySelectorAll('.user')
 const btnSend = document.querySelector(".requestRegister")
 
-const infoButton = document.querySelector('.infoButton')
-infoButton.addEventListener('click', () => {
-  infoButton.classList.toggle('opened')
-
-})
-
 const inputConditions = {
-  'username': {
-    isValid: false
-  },
-  'password': {
-    isValid: true
-  },
-  'confirmpassword': {
-    isValid: true
-  },
-  'email': {
-    isValid: false
-  },
+  'text': /^[a-zA-Z]{4,15}$/,
+  'password': /(?=.*([\W_].*){6})(?=.*([A-Z].*){5})(?=.*(\-.*){2})/,
+  'email': /^([a-zA-Z0-9_\.\-])+\@((gmail)+\.)+([a-zA-Z0-9]{2,4}\.)?([a-zA-Z0-9]{2,4})$/,
 }
 
 inputsUser.forEach(input => {
   input.addEventListener('keyup', (e) => {
-    if ( input.classList[1] == 'username') {
-      usernameValidation(e.target)
-
-    }
-    else if ( input.classList[1] == 'email' ) {
-      emailValidation(e.target)
-
-    }
+    validation(e.target)
   })
 })
 
-btnSend.addEventListener('click', () => {
-  console.log('Sending info')
-
-})
-
-function usernameValidation(input) {
+function validation(input) {
   if ( !input.value.length ) {
     input.classList.remove('valid')
     input.classList.remove('invalid')
 
-    inputConditions['username'].isValid = false
-
   } else {
-    const username = input.value.trim()
-    const regExUsername = /^[a-zA-Z]{4,15}$/
-    const validUsername = regExUsername.test(username)
+    const inputValue = input.value.trim()
+    const regExCondition = inputConditions[input.type]
+    const testInput = regExCondition.test(inputValue)
 
-    if ( !validUsername ) {
-      input.classList.remove('valid')
-      input.classList.add('invalid') 
-
-      inputConditions['username'].isValid = false
-
-  
-    } else if ( validUsername ) {
-      input.classList.add('valid')
-      input.classList.remove('invalid')
-
-      inputConditions['username'].isValid = true
-  
-    }
+    if ( !testInput ) showError(input)
+    else removeError(input)
+    
   }
 
-  isUserValid()
+  validInputs()
 }
 
-function emailValidation(input) {
-  const email = input.value
+function showError(input) {
+  const error = document.querySelector(`.error.${input.type}`)
 
-  if ( !input.value.length ) {
-    input.classList.remove('valid')
-    input.classList.remove('invalid')
+  input.classList.remove('valid')
+  input.classList.add('invalid')
 
-    inputConditions['email'].isValid = false
-
-  } else {
-    const regExEmailValidator = /^([a-zA-Z0-9_\.\-])+\@((gmail)+\.)+([a-zA-Z0-9]{2,4}\.)?([a-zA-Z0-9]{2,4})$/
-    const validEmail = regExEmailValidator.test(email)
-  
-    if ( !validEmail ) {
-      // ! Invalid Email
-      input.classList.remove('valid')
-      input.classList.add('invalid') 
-
-      inputConditions['email'].isValid = false
-
-    } else {
-      // * Valid Email
-      input.classList.remove('invalid')
-      input.classList.add('valid')
-
-      inputConditions['email'].isValid = true
-      
-    }
-  }
-  
-  isUserValid()
+  error.hidden = false
 }
 
-function passwordValidation() {
+function removeError(input) {
+  const error = document.querySelector(`.error.${input.type}`)
 
+  input.classList.add('valid')
+  input.classList.remove('invalid')
+
+  error.hidden = true
 
 }
 
-function isUserValid() {
-  if ( inputConditions['username'].isValid && inputConditions['password'].isValid && inputConditions['confirmpassword'].isValid && inputConditions['email'].isValid ) {
-    return btnSend.disabled = false
-  }
+function validInputs() {
+  const valids = document.querySelectorAll('.valid').length
 
-  btnSend.disabled = true
+  if ( valids == 3 ) btnSend.disabled = false
+  else btnSend.disabled = true
 }
